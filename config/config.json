@@ -1,0 +1,36 @@
+{
+  "host": "0.0.0.0",
+  "hostname": "t3slaapi.moovetrax.com",
+  "port": 8443,
+  "log_level": "debug",
+  "json_log_enable": true,
+  "reliable_ack": false,
+  "namespace": "telemetry",
+  "transmit_decoded_records": true,
+  "kafka": {
+    "bootstrap.servers": "kafka:9092",
+    "queue.buffering.max.messages": 1000000,
+    "message.max.bytes": 209715200
+  },
+  "rate_limit": {
+    "enabled": true,
+    "message_interval_time": 30,
+    "message_limit": 1000
+  },
+  "records": {
+    "alerts": [
+      "kafka"
+    ],
+    "errors": [
+      "kafka"
+    ],
+    "V": [
+      "kafka"
+    ]
+  },
+  "tls": {
+    "ca_file": "/etc/ssl/t3sla/t3slaapi_moovetrax_com.ca-bundle",
+    "server_cert": "/etc/ssl/t3sla/t3slaapi_moovetrax_com.crt",
+    "server_key": "/etc/ssl/t3sla/t3slaapi.moovetrax.com_key"
+  }
+}
